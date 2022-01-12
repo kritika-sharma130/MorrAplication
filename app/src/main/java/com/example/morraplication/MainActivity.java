@@ -27,6 +27,9 @@ public class MainActivity extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        if (e1.getText().toString().length() == 0 || e2.getText().toString().length() == 0 || e3.getText().toString().length() == 0 || e4.getText().toString().length() == 0 || e5.getText().toString().length() == 0) {
+                            Toast.makeText(MainActivity.this, "Please enter all fields", Toast.LENGTH_SHORT).show();
+                        }
                         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                         builder.setMessage("Payment Successful");
                         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -38,9 +41,8 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
 
+
         );
-        if (e1.getText().toString().length() == 0 || e2.getText().toString().length() == 0 || e3.getText().toString().length() == 0 || e4.getText().toString().length() == 0 || e5.getText().toString().length() == 0) {
-            Toast.makeText(MainActivity.this, "Please enter all fields", Toast.LENGTH_SHORT).show();
-        }
+
     }
 }
